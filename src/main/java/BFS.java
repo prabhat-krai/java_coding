@@ -1,6 +1,7 @@
+// Breath First Search implemented on a Graph
 import java.util.*;
 
-class Graph
+class Graph // class to make nodes of a Graph
 {
     private int V;
     private LinkedList<Integer> adj[];
@@ -14,12 +15,14 @@ class Graph
     }
 
 
-    void addEdge(int v,int w)
-    {
+    void addEdge(int v,int w) // Connecting two nodes of the graph
+     {
+
         adj[v].add(w);
+
     }
 
-    void BFS(int s)
+    void BFS(int s)   // Implementing the algorithm of BFS using a Queue
     {
         boolean visited[] = new boolean[V];
 
