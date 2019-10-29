@@ -5,7 +5,7 @@ package com.prabhat.exercise.top;
 // in time complexity root of n, what is significantly better than O(n^2) when using trivial algorithm.
 public class MoAlgo {
     public static void main(String[] args) {
-
+        // Still cannot think of a O(n^0.5) solution
 
     }
 }
