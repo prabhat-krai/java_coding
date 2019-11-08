@@ -45,7 +45,7 @@ class Graph
     }
 }
 
-class Dijkstra
+public class Dijkstra
 {
     private static void printRoute(int prev[], int i)
     {
@@ -135,7 +135,7 @@ class Dijkstra
         // Set number of vertices in the graph
         final int N = 5;
 
-        // construct graph
+        // construct graph and pass the number of edges.
         Graph graph = new Graph(edges, N);
 
         shortestPath(graph, 0, N);
