@@ -10,7 +10,7 @@ class Edge
         this.dest = dest;
         this.weight = weight;
     }
-};
+}
 
 // Data structure to store heap nodes
 class Node
@@ -21,16 +21,16 @@ class Node
         this.vertex = vertex;
         this.weight = weight;
     }
-};
+}
 
 // class to represent a graph object
-class Graph
+class GraphD
 {
     // A List of Lists to represent an adjacency list
     List<List<Edge>> adjList = null;
 
     // Constructor
-    Graph(List<Edge> edges, int N)
+    GraphD(List<Edge> edges, int N)
     {
         adjList = new ArrayList<>(N);
 
@@ -57,7 +57,7 @@ public class Dijkstra
     }
 
     // Run Dijkstra's algorithm on given graph
-    public static void shortestPath(Graph graph, int source, int N)
+    public static void shortestPath(GraphD graphD, int source, int N)
     {
         // create min heap and push source node having distance 0
         PriorityQueue<Node> minHeap = new PriorityQueue<>(
@@ -91,7 +91,7 @@ public class Dijkstra
             int u = node.vertex;
 
             // do for each neighbor v of u
-            for (Edge edge: graph.adjList.get(u))
+            for (Edge edge: graphD.adjList.get(u))
             {
                 int v = edge.dest;
                 int weight = edge.weight;
@@ -124,7 +124,7 @@ public class Dijkstra
         // initialize edges as per above diagram
         // (u, v, w) triplet represent undirected edge from
         // vertex u to vertex v having weight w
-        List<Edge> edges = Arrays.asList(
+        List<Edge> edges = Arrays.asList( //constructing the graph to find a path
                 new Edge(0, 1, 10), new Edge(0, 4, 3),
                 new Edge(1, 2, 2), new Edge(1, 4, 4),
                 new Edge(2, 3, 9), new Edge(3, 2, 7),
@@ -136,8 +136,8 @@ public class Dijkstra
         final int N = 5;
 
         // construct graph and pass the number of edges.
-        Graph graph = new Graph(edges, N);
+        GraphD graphD = new GraphD(edges, N);
 
-        shortestPath(graph, 0, N);
+        shortestPath(graphD, 0, N);
     }
 }
